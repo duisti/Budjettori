@@ -14,10 +14,10 @@
 			<input type="text" id="description" th:field="*{description}" />
 			<div style="clear: both; display: block; height: 10px;"></div>
 		  	<label for="price">Price</label>
-			<input type="number"id="price" th:field="*{price}" />
+			<input type="number" step="any" min="0" id="price" th:field="*{price}" />
 			<div style="clear: both; display: block; height: 10px;"></div>
 		  	<label for="amount">Amount</label>
-			<input type="number"th:field="*{amount}" />
+			<input type="number" min="0" th:field="*{amount}" />
 			<div style="clear: both; display: block; height: 10px;"></div>
 			
 			<div style="clear: both; display: block; height: 10px;"></div>						
