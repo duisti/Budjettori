@@ -24,13 +24,18 @@ public class BudjettoriApplication {
 		return (args) -> {
 			//something here
 			
-			Category c1 = new Category("Food");
-			Category c2 = new Category("Supplies");
+			Category c1 = new Category("Groceries");
+			Category c2 = new Category("Supplies and Parts");
+			Category c3 = new Category("Miscellaneous");
 			crepository.save(c1);
 			crepository.save(c2);
+			crepository.save(c3);
+
+			Item b1 = new Item("Salmon, 600g", 3.99, 2, crepository.findByName("Groceries").get(0));
+			Item b2 = new Item("Toilet Paper, pack of 6", 2.29, 1, crepository.findByName("Supplies and Parts").get(0));
 			
-			Item b1 = new Item("Salmon, 600g", 3.99, 2, crepository.findByName("Food").get(0));
-			Item b2 = new Item("Toilet Paper, pack of 6", 2.49, 1, crepository.findByName("Supplies").get(0));
+			brepository.save(b1);
+			brepository.save(b2);
 			
 			//create some users and admins
 			//password should be "user"
@@ -39,9 +44,6 @@ public class BudjettoriApplication {
 			User admin = new User("admin", "$2y$12$EpjKs7XF4dLMiCc1yfUn9eobRa3N9QnicBUlI69mBJUtmxc573W32", "ADMIN");
 			urepository.save(user);
 			urepository.save(admin);
-			
-			brepository.save(b1);
-			brepository.save(b2);
 		};
 	}
 

@@ -18,7 +18,7 @@ public class Item {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	private String item;
+	private String description;
 	private double price;
 	private int amount;
 	
@@ -33,9 +33,9 @@ public class Item {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Item(String item, double price, int amount, Category category) {
+	public Item(String description, double price, int amount, Category category) {
 		super();
-		this.item = item;
+		this.description = description;
 		this.price = price;
 		this.amount = amount;
 		this.category = category;
@@ -49,12 +49,12 @@ public class Item {
 		this.id = id;
 	}
 	
-	public String getitem() {
-		return item;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setitem(String item) {
-		this.item = item;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public double getPrice() {
@@ -84,9 +84,9 @@ public class Item {
 	@Override
 	public String toString() {
 		if (this.category != null)
-		return "Item [item=" + item + ", amount=" + amount + ", price per item=" + price + " category=" + this.getCategory() + "]";
+		return "description [description=" + description + ", amount=" + amount + ", price per description=" + price + " category=" + this.getCategory() + "]";
 		else
-			return "Item [item=" + item + ", amount=" + amount + ", price per item=" + price + "]";
+			return "description [description=" + description + ", amount=" + amount + ", price per description=" + price + "]";
 	}
 	
 	
