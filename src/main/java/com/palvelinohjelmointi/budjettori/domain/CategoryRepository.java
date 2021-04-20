@@ -1,4 +1,4 @@
-package com.palvelinohjelmointi.bookstoreJoonaL.domain;
+package com.palvelinohjelmointi.budjettori.domain;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;

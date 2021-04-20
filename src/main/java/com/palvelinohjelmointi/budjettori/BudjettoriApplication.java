@@ -1,4 +1,4 @@
-package com.palvelinohjelmointi.bookstoreJoonaL;
+package com.palvelinohjelmointi.budjettori;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,29 +7,30 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.palvelinohjelmointi.bookstoreJoonaL.domain.*;
-import com.palvelinohjelmointi.bookstoreJoonaL.web.*;
+import com.palvelinohjelmointi.budjettori.domain.*;
+import com.palvelinohjelmointi.budjettori.web.*;
 
 
 @SpringBootApplication
-public class BookstoreJoonaLApplication {
-	private static final Logger log = LoggerFactory.getLogger(BookstoreJoonaLApplication.class);
+public class BudjettoriApplication {
+	private static final Logger log = LoggerFactory.getLogger(BudjettoriApplication.class);
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookstoreJoonaLApplication.class, args);
+		SpringApplication.run(BudjettoriApplication.class, args);
 	}
 	
 	@Bean
-	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository, UserRepository urepository) {
+	public CommandLineRunner demo(ItemRepository brepository, CategoryRepository crepository, UserRepository urepository) {
 		return (args) -> {
 			//something here
-			Category c1 = new Category("Mystery");
-			Category c2 = new Category("Thriller");
+			
+			Category c1 = new Category("Food");
+			Category c2 = new Category("Supplies");
 			crepository.save(c1);
 			crepository.save(c2);
 			
-			Book b1 = new Book("Uusi Kirja", "Meitsi", 1990, "1592195", crepository.findByName("Mystery").get(0));
-			Book b2 = new Book("Toinen Kirja", "Meitsi", 1993, "1592155", crepository.findByName("Thriller").get(0));
+			Item b1 = new Item("Salmon, 600g", 3.99, 2, crepository.findByName("Food").get(0));
+			Item b2 = new Item("Toilet Paper, pack of 6", 2.49, 1, crepository.findByName("Supplies").get(0));
 			
 			//create some users and admins
 			//password should be "user"

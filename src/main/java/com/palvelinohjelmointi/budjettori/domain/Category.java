@@ -1,4 +1,4 @@
-package com.palvelinohjelmointi.bookstoreJoonaL.domain;
+package com.palvelinohjelmointi.budjettori.domain;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class Category {
 	
 	@JsonBackReference	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-	private List<Book> books;
+	private List<Item> items;
 	
 	public Category() {}
 
@@ -47,12 +47,12 @@ public class Category {
 		this.name = name;
 	}
 	
-	public List<Book> getBooks(){
-		return books;
+	public List<Item> getItems(){
+		return items;
 	}
 
-	public void setBooks(List<Book> books){
-		this.books = books;
+	public void setItems(List<Item> items){
+		this.items = items;
 	}
 	
 	@Override

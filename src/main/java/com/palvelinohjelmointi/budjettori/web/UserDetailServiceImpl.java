@@ -1,4 +1,4 @@
-package com.palvelinohjelmointi.bookstoreJoonaL.web;
+package com.palvelinohjelmointi.budjettori.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.palvelinohjelmointi.bookstoreJoonaL.domain.*;
+import com.palvelinohjelmointi.budjettori.domain.*;
 
 /**
  * This class is used by spring security to authenticate and authorize user

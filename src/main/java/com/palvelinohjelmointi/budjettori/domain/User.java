@@ -1,4 +1,4 @@
-package com.palvelinohjelmointi.bookstoreJoonaL.domain;
+package com.palvelinohjelmointi.budjettori.domain;
 
 import javax.persistence.*;
 

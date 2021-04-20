@@ -1,4 +1,4 @@
-package com.palvelinohjelmointi.bookstoreJoonaL.web;
+package com.palvelinohjelmointi.budjettori.web;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.palvelinohjelmointi.bookstoreJoonaL.domain.*;
+import com.palvelinohjelmointi.budjettori.domain.*;
 
 
 @Controller
-public class BookController {
+public class ItemController {
 	@Autowired
-	private BookRepository repository;
+	private ItemRepository repository;
 	
 	@Autowired
 	private CategoryRepository crepository;
@@ -39,13 +39,13 @@ public class BookController {
 	
 	// RESTful service to get all books
     @RequestMapping(value="/books", method = RequestMethod.GET)
-    public @ResponseBody List<Book> studentListRest() {	
-        return (List<Book>) repository.findAll();
+    public @ResponseBody List<Item> studentListRest() {	
+        return (List<Item>) repository.findAll();
     }   
     
     // RESTful service to get book by id
     @RequestMapping(value="/book/{id}", method = RequestMethod.GET)
-    public @ResponseBody Optional<Book> findStudentRest(@PathVariable("id") Long bookId) {	
+    public @ResponseBody Optional<Item> findStudentRest(@PathVariable("id") Long bookId) {	
     	return repository.findById(bookId);
     } 
 	
@@ -53,7 +53,7 @@ public class BookController {
 	//add new book
 	@RequestMapping(value = "/add")
 	public String addBook(Model model) {
-		model.addAttribute("book", new Book());
+		model.addAttribute("book", new Item());
     	model.addAttribute("categories", crepository.findAll());
 		return "addbook";
 	}
@@ -61,7 +61,7 @@ public class BookController {
 	
 	//save new book
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(Book book) {
+	public String save(Item book) {
 		repository.save(book);
 			return "redirect:booklist";
 	}

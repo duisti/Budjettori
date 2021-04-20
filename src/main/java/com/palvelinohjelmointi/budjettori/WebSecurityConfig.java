@@ -1,4 +1,4 @@
-package com.palvelinohjelmointi.bookstoreJoonaL;
+package com.palvelinohjelmointi.budjettori;
 
 
 import java.util.ArrayList;
@@ -20,8 +20,8 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-import com.palvelinohjelmointi.bookstoreJoonaL.domain.*;
-import com.palvelinohjelmointi.bookstoreJoonaL.web.*;
+import com.palvelinohjelmointi.budjettori.domain.*;
+import com.palvelinohjelmointi.budjettori.web.*;
 
 
 @Configuration
