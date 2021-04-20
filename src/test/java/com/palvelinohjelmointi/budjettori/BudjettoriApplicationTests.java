@@ -1,10 +1,10 @@
-package com.palvelinohjelmointi.bookstoreJoonaL;
+package com.palvelinohjelmointi.budjettori;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BookstoreJoonaLApplicationTests {
+class BudjettoriApplicationTests {
 
 	@Test
 	void contextLoads() {
